@@ -1,4 +1,41 @@
 <?php
+define('ROOTURL', (@$_SERVER['REQUEST_SCHEME']?:'https')."://".@$_SERVER['HTTP_HOST']);
+define('BASEURI', ROOTURL.'/');
+define('RESOURCE', ROOTURL.'/Uploads/');
+define('UPLOADS', ROOTURL);
+define('UPLOADSURL', ROOTURL."/Uploads/");
+define('UPLOADSURLQRCODE', ROOTURL."/Uploads/qrcode/");
+define('ROOTPATH', realpath(public_path('/')));
+define('RESOURCEPATH', ROOTPATH.'/Uploads');
+define('RESOURCEPATHCODE', ROOTPATH.'/Uploads/qrcode/');
+define('CDNSERVER', env('CDNSERVER'));
+define('CDNRESOURCE', env('CDNRESOURCE', CDNSERVER.'/Uploads/'));
+define('CDNVERSION', env('CDNVERSION'));
+define('SERVICEEMAIL', env('SERVICEEMAIL'));
+define('DEBUGCHECK', env('DEBUGCHECK'));
+define('CSS_VERSION', env('CSS_VERSION', '1.1.1'));
+define('JS_VERSION', env('JS_VERSION', '1.1.1'));
+define('Crypt3DesIV', 'jiamengshuo');
+define('Crypt3DesKey', 'jiamengshuo');
+define('LOGINTOKEN', 'henry_cookie_key');
+//上传图片类型
+$GLOBALS['upload_mime'] = array('image/jpeg' => 1, 'image/png' => 2, 'image/gif' => 3,'image/jpg' => 4);
+$GLOBALS['upload_video'] = ['video/mp4',"video/ogg","video/flv"];
+$GLOBALS['uid'] = 0;
+//加盟说小程序
+$GLOBALS['jiamengshuo'] = [
+    'appid'=> 'wx13cd0cefe0bd9f7a',
+    'appsecret'=> '0401c547b04ea80245eeaeec00283ca0',
+];
+$GLOBALS['fanxiang'] = [
+    'appid'=> 'wx3957c7b602a3dc95',
+    'appsecret'=> '926c6a96d01b1908e79e91a935972751',
+];
+// 加盟说服务号
+$GLOBALS['jiamengshuo_server'] = [
+    'appid'=> 'wxa6c151fef227a9c4',
+    'appsecret'=> 'b4dd631976150ccc37adbc8414411382',
+];
 
 return [
 
