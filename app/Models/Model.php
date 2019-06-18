@@ -87,6 +87,12 @@ class Model extends DB{
         return self::$log;
     }
     //商品信息
+    private static $banner;
+    public static function Banner(){
+        if (!self::$banner) self::$banner = new Banner();
+        return self::$banner;
+    }
+    //商品信息
     private static $product;
     public static function Product(){
         if (!self::$product) self::$product = new Product();

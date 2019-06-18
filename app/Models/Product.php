@@ -25,4 +25,7 @@ class Product extends Model{
     public function delProduct($id){
         return self::table('products')->where(['product_id'=>$id])->delete();
     }
+    public function getProducts(){
+        return self::table('product')->orderBy('id', 'desc')->get()->toArray();
+    }
 }

@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 ***/
 Route::namespace('Api')->prefix('v1')->middleware(['api','cors'])->group(function (){
-    Route::get('/', 'TestController@index');
+    Route::get('/', 'IndexController@index');
     Route::get('/token', 'TestController@token');
     Route::get('/login', 'TestController@login');
 });
